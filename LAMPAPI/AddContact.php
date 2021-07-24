@@ -8,14 +8,14 @@
     $address = $inData["address"];
     $userId = $inData["userId"];
 
-	$conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+	$conn = new mysqli("localhost", "root", "", "contactmanager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$sql = "insert into Contacts (FName, LName, Email, Phone, Address, UserID) VALUES ( '$firstname',   '$lastname', '$email',  '$phone', '$address', $userId)";
+		$sql = "insert into contacts (FName, LName, Email, Phone, Address, UserID) VALUES ( '$firstname',   '$lastname', '$email',  '$phone', '$address', $userId)";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );

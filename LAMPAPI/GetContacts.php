@@ -1,14 +1,14 @@
 <?php
 	$id = $_POST["userId"];
 
-	$conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+	$conn = new mysqli("localhost", "root", "", "contactmanager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	} 
 	else
 	{
-		$result = mysqli_query($conn, "Select FName, LName, Email, Phone, Address from Contacts where UserID = '$id' ");
+		$result = mysqli_query($conn, "Select FName, LName, Email, Phone, Address from contacts where UserID = '$id' ");
 		$rows = array();
 		while ($row = mysqli_fetch_array($result))
 		{

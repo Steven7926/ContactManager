@@ -6,7 +6,7 @@
 	$login = $inData["login"];
 	$password = $inData["password"];
 
-	$conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+	$conn = new mysqli("localhost", "root", "", "contactmanager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -14,7 +14,7 @@
 	else
 	{
 		$hashpass = md5($password, FALSE);
-		$sql = "insert into Users (FirstName, LastName, Login, Password) VALUES ( '$firstname',   '$lastname', '$login',  '$hashpass' )";
+		$sql = "insert into users (FirstName, LastName, Login, Password) VALUES ( '$firstname',   '$lastname', '$login',  '$hashpass' )";
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );

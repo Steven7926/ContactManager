@@ -14,14 +14,14 @@
     $addresse = $inData["addresse"];
 
 
-	$conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+	$conn = new mysqli("localhost", "root", "", "contactmanager");
 	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
 	}
 	else
 	{
-		$sql = "UPDATE Contacts SET  FName = '$firstnamee',
+		$sql = "UPDATE contacts SET  FName = '$firstnamee',
 									 LName = '$lastnamee',
 									 Email = '$emaile',
 									 Phone = '$phonee',

@@ -1,4 +1,4 @@
-var urlBase = 'https://cop4331contactmanager.us/LAMPAPI';
+var urlBase = 'http://127.0.0.1/login/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
@@ -404,7 +404,7 @@ function getTable()
 		//"processing": true,
 		//"serverSide": true,
 		"ajax": {
-			url: "https://cop4331contactmanager.us/LAMPAPI/GetContacts.php",
+			url: url,
 			type: "POST",
 			dataSrc: "",
 			data: {

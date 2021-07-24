@@ -8,7 +8,7 @@
    	$address = $inData["address"];
     $userId = $inData["userId"];
 
-     $conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+     $conn = new mysqli("localhost", "root", "", "contactmanager");
 	
 	if ($conn->connect_error)
 	{
@@ -21,7 +21,7 @@
 	
 	else{
 	// sql to delete a record
-     $sql = "DELETE FROM Contacts WHERE (FName, LName, Email, Phone, Address, UserID) =( '$firstname',   '$lastname', '$email',  '$phone', '$address', $userId)";
+     $sql = "DELETE FROM contacts WHERE (FName, LName, Email, Phone, Address, UserID) =( '$firstname',   '$lastname', '$email',  '$phone', '$address', $userId)";
         
         if ($result = $conn->query($sql) != TRUE) {
           echo "Record deleted successfully";

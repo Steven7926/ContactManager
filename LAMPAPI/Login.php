@@ -6,7 +6,7 @@
 	$firstName = "";
 	$lastName = "";
 
-	$conn = new mysqli("localhost", "tgreco32_tommy", "COP4331@#4", "tgreco32_ContactManager");
+	$conn = new mysqli("localhost", "root", "", "contactmanager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -14,7 +14,7 @@
 	else
 	{
 		$passhash = md5($inData["password"], FALSE);
-		$sql = "SELECT ID, FirstName, LastName FROM Users where Login='" . $inData["login"] . "' and Password='" . $passhash . "'";
+		$sql = "SELECT ID, FirstName, LastName FROM users where Login='" . $inData["login"] . "' and Password='" . $passhash . "'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
