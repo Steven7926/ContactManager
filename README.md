@@ -1,4 +1,4 @@
 # ContactManager
-###A simple contact manager built on a LAMP stack.
+### A simple contact manager built on a LAMP stack.
 
-##Ran using XAMPP for a web server.
+## Ran using XAMPP for a web server.
